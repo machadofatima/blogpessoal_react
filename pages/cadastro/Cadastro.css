@@ -1,0 +1,8 @@
+.fundoCadastro {
+    background-image: url("https://ik.imagekit.io/machadofatima/Blog%20Pessoal/register.svg?updatedAt=1737043726753");
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+  }
