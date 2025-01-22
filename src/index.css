@@ -15,3 +15,24 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Instrument Sans';
+  src: url('/assets/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('/assets/fonts/Instrument_Serif/InstrumentSerif-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gelasio';
+  src: url('/assets/fonts/Gelasio/Gelasio-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -39,8 +39,8 @@ function Login() {
                     h-screen place-items-center font-bold ">
                 <form className="flex justify-center items-center flex-col w-1/2 gap-4"
                     onSubmit={login}>
-                    <h2 className="text-slate-900 text-5xl ">Entrar</h2>
-                    <div className="flex flex-col w-full">
+                    <h2 className="text-slate-900 text-5xl font-gelasio ">Entrar</h2>
+                    <div className="flex flex-col w-full ">
                         <label htmlFor="usuario">Usuário</label>
                         <input
                             type="text"
