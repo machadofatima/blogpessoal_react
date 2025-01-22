@@ -1,4 +1,5 @@
-import ListaPostagens from "../../components/postagens/listapostagens/ListaPostagens";
+﻿import ListaPostagens from "../../components/postagens/listapostagens/ListaPostagens";
+import ModalPostagem from "../../components/postagens/modalpostagem/ModalPostagem"
 
 function Home() {
   return (
@@ -7,7 +8,12 @@ function Home() {
         <div className="max-w-7xl flex flex-col items-center text-center">
           <h2 className="text-9xl font-gelasio text-white mb-4">Olá!</h2>
           <p className="text-3xl font-instrument-serif text-white mb-6">Expresse aqui seus pensamentos e opiniões</p>
+          
+          <ModalPostagem />
+
+
         </div>
+
 
         <div className="max-w-7xl flex flex-col items-center mt-6">
           <img
@@ -17,7 +23,10 @@ function Home() {
           />
         </div>
       </div>
+
       <ListaPostagens />
+
+
     </>
   );
 }
