@@ -1,6 +1,7 @@
 .popup-content {
     border-radius: 1rem;
-    padding-bottom: 2rem;
+    padding-bottom: 2px;
+    margin: 0;
 }
 
 .modal-postagem-container {
@@ -12,7 +13,7 @@
 
 button {
     border-radius: 8px;
-    padding: 10px;
+    padding: 2px;
     background-color: transparent;
     color: #333;
 }

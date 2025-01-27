@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Tema from "../../../models/Tema";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function FormTema() {
 
@@ -31,7 +32,7 @@ function FormTema() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado!')
+            ToastAlerta('Você precisa estar logado!', 'info')
             navigate('/')
         }
     }, [token])
@@ -110,8 +111,8 @@ function FormTema() {
                     />
                 </div>
                 <button
-                    className="rounded text-slate-100 bg-pink-300 
-                               hover:bg-pink-600 w-1/2 py-2 mx-auto flex justify-center"
+                className="rounded text-white bg-[#594A42] hover:text-black hover:bg-[#DED7D2] 
+                    w-1/2 py-2 mx-auto flex justify-center"
                     type="submit">
                     {isLoading ?
                         <RotatingLines
