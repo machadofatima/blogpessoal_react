@@ -137,71 +137,69 @@ function FormPostagem() {
   const carregandoTema = tema.descricao === '';
 
   return (
-    <div className="container flex flex-col mx-auto items-center font-quicksan">
+    <div className="container flex flex-col mx-auto items-center">
       <h1 className="text-4xl text-center my-8">
         {id !== undefined ? 'Editar Postagem' : 'Cadastrar Postagem'}
       </h1>
 
       <form className="flex flex-col w-1/2 gap-4" onSubmit={gerarNovaPostagem}>
         <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Titulo da Postagem</label>
+          <label htmlFor="titulo" className="font-semibold">Título da Postagem</label>
           <input
             type="text"
-            placeholder="Titulo"
+            placeholder="Título"
             name="titulo"
             required
-            className="border-2 border-dark-blue rounded-2xl p-2"
+            className="border-2 border-[#2E140D] rounded-lg p-3 bg-[#F9F9F9]"
             value={postagem.titulo}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            onChange={(e) => atualizarEstado(e)}
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Texto da Postagem</label>
+          <label htmlFor="texto" className="font-semibold">Texto da Postagem</label>
           <input
             type="text"
             placeholder="Texto"
             name="texto"
             required
-            className="border-2 border-dark-blue rounded-2xl p-2"
+            className="border-2 border-[#2E140D] rounded-lg p-3 bg-[#F9F9F9]"
             value={postagem.texto}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            onChange={(e) => atualizarEstado(e)}
           />
         </div>
         <div className="flex flex-col gap-2">
-          <p>Tema da Postagem</p>
-          <select name="tema" id="tema" className="border p-2 border-dark-blue rounded-2xl bg-pink-100"
-          onChange={(e) => buscarTemaPorId(e.currentTarget.value)}
+          <label htmlFor="tema" className="font-semibold">Tema da Postagem</label>
+          <select
+            name="tema"
+            id="tema"
+            className="border-2 border-[#2E140D] rounded-lg p-3 bg-[#F5F5F5]"
+            onChange={(e) => buscarTemaPorId(e.currentTarget.value)}
           >
-            <option value="" selected disabled>
+            <option value="" disabled selected>
               Selecione um Tema
             </option>
 
             {temas.map((tema) => (
-              <>
-              <option value={tema.id}>{tema.descricao}</option>
-            </>
+              <option key={tema.id} value={tema.id}>{tema.descricao}</option>
             ))}
-            
           </select>
         </div>
         <button
           type="submit"
-          className="rounded-2xl disabled:bg-gray-blue bg-dark-blue hover:bg-gray-purple
-                                        text-white font-bold w-1/2 mx-auto py-2 flex justify-center"
-          disabled={carregandoTema}>
-          {isLoading ? 
-              <Oval
-                  visible={true}
-                  height="24"
-                  width="24"
-                  color="#fbcfe8"
-                  ariaLabel="oval-loading"
-                  wrapperStyle={{}}
-                  wrapperClass=""
-                /> : 
-              <span>{id !== undefined ? 'Atualizar' : 'Cadastrar'}</span>
-                      
-          }
+          className="rounded-lg disabled:bg-gray-400 bg-[#917C78] hover:bg-[#92E3A9] hover:text-[#000000] text-white font-bold w-1/2 mx-auto py-3 flex justify-center"
+          disabled={carregandoTema}
+        >
+          {isLoading ? (
+            <Oval
+              visible={true}
+              height="24"
+              width="24"
+              color="white"
+              ariaLabel="oval-loading"
+            />
+          ) : (
+            <span>{id !== undefined ? 'Atualizar' : 'Cadastrar'}</span>
+          )}
         </button>
       </form>
     </div>
