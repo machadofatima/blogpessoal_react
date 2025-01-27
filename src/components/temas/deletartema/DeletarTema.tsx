@@ -55,13 +55,13 @@ function DeletarTema() {
                 }
             })
 
-            alert('Tema apagado com sucesso')
+            ToastAlerta('Tema apagado com sucesso','successo')
 
         } catch (error: any) {
             if (error.toString().includes('403')) {
                 handleLogout()
             }else {
-                alert('Erro ao deletar o tema.')
+                ToastAlerta('Erro ao deletar o tema.','erro')
             }
         }
 
@@ -80,19 +80,20 @@ function DeletarTema() {
                 Você tem certeza de que deseja apagar o tema a seguir?</p>
             <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
                 <header 
-                    className='py-2 px-6 bg-pink-400 text-white font-bold text-2xl'>
+                    className='py-2 px-6 bg-[#917C78] text-white font-bold text-2xl'>
                     Tema
                 </header>
                 <p className='p-8 text-3xl bg-slate-200 h-full'>{tema.descricao}</p>
                 <div className="flex">
                     <button 
-                        className='text-slate-100 bg-pink-300 hover:bg-pink-600 w-full py-2'
+                        className='w-full text-white bg-[#2E140D] font-roboto
+                    hover:bg-[#917C78] flex items-center justify-center py-2 rounded'
                         onClick={retornar}>
                         Não
                     </button>
                     <button 
-                        className='w-full text-slate-100 bg-pink-200 
-                                   hover:bg-pink-600 flex items-center justify-center'
+                        className='text-white bg-[#917C78] 
+                    hover:bg-[#de5959] w-full flex items-center justify-center py-2 rounded'
                                    onClick={deletarTema}>
                         {isLoading ?
                             <RotatingLines
